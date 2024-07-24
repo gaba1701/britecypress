@@ -48,8 +48,10 @@ describe('IMDb Born Today Section - Celebrities Born Yesterday', () => {
     cy.get('[data-testid="adv-search-get-results"]').click()
 
     // Click on the 3rd name in the list
-    cy.get('div.ipc-metadata-list-summary-item__c').eq(2).click();
+    var thirdElement = cy.get('.ipc-metadata-list-summary-item:nth-child(3)').find("div.ipc-title");
+    thirdElement.click();
+
     //Take a screenshot
-    // cy.screenshot('celebrity-born-yesterday');
+    cy.screenshot('full-page-screenshot');
   });
 });
